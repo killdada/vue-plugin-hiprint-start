@@ -1,5 +1,5 @@
 <!--
- * @Description: 使用 — 入门篇; 
+ * @Description: 使用 — 入门篇;
  * @Author: CcSimple
  * @Github: https://github.com/CcSimple
  * @Date: 2023-02-07 11:52:50
@@ -86,10 +86,14 @@ export default {
 <script setup>
 import { onMounted } from "vue";
 import { hiprint, defaultElementTypeProvider } from "vue-plugin-hiprint";
+import { updateConfig } from "./param";
+
 // 初始化 provider
 hiprint.init({
   providers: [defaultElementTypeProvider()],
 });
+updateConfig();
+
 /**
  * 这里必须要在 onMounted 中去构建 左侧可拖拽元素 或者 设计器
  * 因为都是把元素挂载到对应容器中, 必须要先找到该容器
